@@ -1,3 +1,21 @@
+html {
+  // 神秘的なグラデーションされた背景色
+  background: linear-gradient(45deg, #ea00ff10, #00ffff10);
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  animation: gradient 60s ease infinite;
+}
+
+@keyframes gradient {
+  0%,
+  100% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 0 50%;
+  }
+}
 body {
   // テキトーに設定
   font-family: "Noto Sans JP", sans-serif;
@@ -5,4 +23,7 @@ body {
   line-height: 1.5;
   color: #29009b;
   background-color: #fff;
+
+  max-width: 1000px;
+  margin: 0 auto;
 }
