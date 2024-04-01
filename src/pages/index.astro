@@ -1,7 +1,68 @@
 ---
+import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="トップ">
-  <p>へへへ</p>
+  <main>
+    <div class="container">
+      <div class="content">
+        <h1><span><Icon name="line-md:compass" /></span>物理部展2024</h1>
+        <p>
+          第77回栄光祭催し物「物理部展2024」の特設ページです。物理部展の情報や物理部の活動を紹介しています。<br
+          />栄光学園校舎の北棟で開催されます。ぜひお越しください！
+        </p>
+      </div>
+      <div class="content">
+        <a
+          class="twitter-timeline"
+          data-height="500"
+          data-lang="ja"
+          data-theme="light"
+          href="https://twitter.com/EikoPhysicsClub?ref_src=twsrc%5Etfw"
+          >@EikoPhysicsClubのポストを読み込み中...</a
+        >
+      </div>
+    </div>
+  </main>
 </Layout>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"
+></script>
+<style lang="scss">
+  main {
+    .container {
+      height: 100%;
+      display: flex;
+      margin-inline: auto;
+      justify-content: center;
+      align-items: center;
+      .content {
+        flex: 1;
+        &:first-child {
+          filter: drop-shadow(0 0 10px #fefeff) drop-shadow(0 0 10px #fefeff)
+            drop-shadow(0 0 10px #fefeff);
+          padding: 1rem;
+          h1 {
+            border-bottom: 3px solid #29009b;
+            span {
+              // 文字の高さ変更
+              display: inline-block;
+              transform: translateY(0.15em);
+            }
+          }
+        }
+        &:last-child {
+          .twitter-timeline {
+            font-size: 17px;
+          }
+        }
+      }
+    }
+  }
+</style>
+<style is:global>
+  .twitter-timeline > iframe {
+    width: 100% !important;
+    opacity: 0.8;
+  }
+</style>

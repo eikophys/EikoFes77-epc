@@ -1,6 +1,5 @@
 html {
-  // 神秘的なグラデーションされた背景色
-  background: linear-gradient(45deg, #ea00ff10, #00ffff10);
+  background: linear-gradient(45deg, #ea00ff15, #00ffff15);
   background-size: 200% 100%;
   background-repeat: no-repeat;
   height: 100%;
@@ -21,9 +20,45 @@ body {
   font-family: "Noto Sans JP", sans-serif;
   font-size: 20px;
   line-height: 1.5;
-  color: #29009b;
-  background-color: #fff;
+  color: #333;
+  background-color: #fefeff;
 
   max-width: 1000px;
   margin: 0 auto;
+  padding: 15px;
+  min-height: calc(100dvh - 30px);
+  box-shadow: 0 0 70px #29009b11;
+}
+a {
+  color: #007bff;
+  &:hover {
+    text-decoration: none;
+  }
+}
+main {
+  position: relative;
+  background-image: radial-gradient(
+      circle at center,
+      transparent,
+      #fefeff 350px
+    ),
+    url("../assets/back.svg");
+  background-size: 350px;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: calc(100svh - 140px);
+  z-index: 0;
+
+  &:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    aspect-ratio: 1/1;
+    width: 300px;
+    border-radius: 9999px;
+    background-color: #29009b50;
+    filter: blur(120px);
+    z-index: -1;
+  }
 }

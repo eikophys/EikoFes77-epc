@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="83.531868mm"
+   height="146.30075mm"
+   viewBox="0 0 83.531868 146.30075"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1"
+     transform="translate(-51.41686,-69.879652)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke:#c8c8c8;stroke-width:0"
+       x="51.416859"
+       y="72.615036"
+       id="text1"><tspan
+         id="tspan1"
+         x="51.416859"
+         y="72.615036"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0">const SignUp = () =&gt; {</tspan><tspan
+         x="51.416859"
+         y="76.583786"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan2">  const router = useRouter();</tspan><tspan
+         x="51.416859"
+         y="80.552536"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan3" /><tspan
+         x="51.416859"
+         y="84.521286"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan4">  const handler = (url: string | null) =&gt; {</tspan><tspan
+         x="51.416859"
+         y="88.490036"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan5">    if (url) {</tspan><tspan
+         x="51.416859"
+         y="92.458786"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan6">      router.push(url);</tspan><tspan
+         x="51.416859"
+         y="96.427536"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan7">    }</tspan><tspan
+         x="51.416859"
+         y="100.39629"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan8">  };</tspan><tspan
+         x="51.416859"
+         y="104.36504"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan9">  const searchParams = useSearchParams();</tspan><tspan
+         x="51.416859"
+         y="108.33379"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan10">  const path = searchParams.get(&quot;path&quot;);</tspan><tspan
+         x="51.416859"
+         y="112.30254"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan11">  const [user] = useAuthState(auth);</tspan><tspan
+         x="51.416859"
+         y="116.27129"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan12" /><tspan
+         x="51.416859"
+         y="120.24004"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan13">  return (</tspan><tspan
+         x="51.416859"
+         y="124.20879"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan14">    &lt;&gt;</tspan><tspan
+         x="51.416859"
+         y="128.17754"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan15">      {user ? (</tspan><tspan
+         x="51.416859"
+         y="132.14629"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan16">        &lt;&gt;{handler(path)}&lt;/&gt;</tspan><tspan
+         x="51.416859"
+         y="136.11504"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan17">      ) : (</tspan><tspan
+         x="51.416859"
+         y="140.08379"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan18">        &lt;ThemeProvider theme={theme}&gt;</tspan><tspan
+         x="51.416859"
+         y="144.05254"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan19">          &lt;div className={styles.size}&gt;</tspan><tspan
+         x="51.416859"
+         y="148.02129"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan20">            &lt;Stack</tspan><tspan
+         x="51.416859"
+         y="151.99004"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan21">              direction=&quot;column&quot;</tspan><tspan
+         x="51.416859"
+         y="155.95879"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan22">              justifyContent=&quot;flex-start&quot;</tspan><tspan
+         x="51.416859"
+         y="159.92754"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan23">              alignItems=&quot;center&quot;</tspan><tspan
+         x="51.416859"
+         y="163.89629"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan24">              spacing={2}</tspan><tspan
+         x="51.416859"
+         y="167.86504"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan25">              className={styles.auth}</tspan><tspan
+         x="51.416859"
+         y="171.83379"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan26">            &gt;</tspan><tspan
+         x="51.416859"
+         y="175.80254"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan28">              &lt;h2&gt;Sign up&lt;/h2&gt;</tspan><tspan
+         x="51.416859"
+         y="179.77129"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan29">              &lt;EmailSignUp /&gt;</tspan><tspan
+         x="51.416859"
+         y="183.74004"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan30">              &lt;GoogleSignUp /&gt;</tspan><tspan
+         x="51.416859"
+         y="187.70879"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan31">            &lt;/Stack&gt;</tspan><tspan
+         x="51.416859"
+         y="191.67754"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan32">          &lt;/div&gt;</tspan><tspan
+         x="51.416859"
+         y="195.64629"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan33">        &lt;/ThemeProvider&gt;</tspan><tspan
+         x="51.416859"
+         y="199.61504"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan34">      )}</tspan><tspan
+         x="51.416859"
+         y="203.58379"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan35">    &lt;/&gt;</tspan><tspan
+         x="51.416859"
+         y="207.55254"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan36">  );</tspan><tspan
+         x="51.416859"
+         y="211.52129"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan37">};</tspan><tspan
+         x="51.416859"
+         y="215.49004"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#29009b;fill-opacity:0.5;stroke-width:0"
+         id="tspan38">export default SignUp;</tspan></text>
+  </g>
+</svg>
