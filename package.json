@@ -7,7 +7,12 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "d": "astro dev",
+    "s": "astro dev",
+    "b": "astro check && astro build",
+    "p": "astro preview",
+    "a": "astro"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.9",
