@@ -22,50 +22,64 @@ import Layout from "../layouts/Layout.astro";
       >@EikoPhysicsClubのポストを読み込み中...</a
     >
   </div>
-  <style lang="scss">
-    .content {
-      flex: 1;
-      width: 100%;
-      &:first-child {
-        filter: drop-shadow(0 0 10px #fefeff) drop-shadow(0 0 10px #fefeff)
-          drop-shadow(0 0 10px #fefeff);
-        padding: 1rem;
-        h1 {
-          border-bottom: 3px solid #29009b;
-          span {
-            // 文字の高さ変更
-            display: inline-block;
-            transform: translateY(0.15em);
-          }
-        }
-      }
-      &:last-child {
-        .twitter-timeline {
-          font-size: 17px;
-        }
-      }
-      .top_btn {
-        padding: 0.1rem 1rem;
-        margin-top: 1rem;
-        margin-inline: auto;
-        width: fit-content;
-        border-radius: 3px;
-        color: #29009b;
-        border: #29009b solid 3px;
-        text-decoration: none;
-        transition: 0.3s;
-        display: flex;
-        align-items: center;
-        &:hover {
-          background-color: #29009b;
-          color: #fefeff;
-        }
-        &::after {
-          content: ">";
-          font-size: 1.5rem;
-          font-weight: bold;
+</Layout>
+
+<style lang="scss">
+  .content {
+    flex: 1;
+    width: 100%;
+    &:first-child {
+      filter: drop-shadow(0 0 10px #fefeff) drop-shadow(0 0 10px #fefeff)
+        drop-shadow(0 0 10px #fefeff);
+      padding: 1rem;
+      h1 {
+        border-bottom: 3px solid #29009b;
+        span {
+          // 文字の高さ変更
+          display: inline-block;
+          transform: translateY(0.15em);
         }
       }
     }
-  </style></Layout
->
+    &:last-child {
+      .twitter-timeline {
+        font-size: 17px;
+      }
+    }
+    .top_btn {
+      padding: 0.1rem 1rem;
+      margin-top: 1rem;
+      margin-inline: auto;
+      width: fit-content;
+      border-radius: 3px;
+      color: #29009b;
+      border: #29009b solid 3px;
+      text-decoration: none;
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      &:hover {
+        background-color: #29009b;
+        color: #fefeff;
+      }
+      &::after {
+        content: ">";
+        margin-left: 0.3rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
+  }
+</style>
+<style is:global>
+  .twitter-timeline > iframe {
+    width: 100% !important;
+    opacity: 0.8;
+  }
+  @media (max-width: 700px) {
+    .twitter-timeline > iframe {
+      width: 100% !important;
+      height: 500px !important;
+    }
+  }
+</style>
