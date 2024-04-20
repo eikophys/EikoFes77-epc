@@ -27,25 +27,8 @@ import Layout from "../layouts/Layout.astro";
 
 <style lang="scss">
   .content {
-    flex: 1;
-    width: 100%;
-    &:first-child {
-      filter: drop-shadow(0 0 10px #fefeff) drop-shadow(0 0 10px #fefeff)
-        drop-shadow(0 0 10px #fefeff);
-      padding: 1rem;
-      h1 {
-        border-bottom: 3px solid #29009b;
-        span {
-          // 文字の高さ変更
-          display: inline-block;
-          transform: translateY(0.15em);
-        }
-      }
-    }
-    &:last-child {
-      .twitter-timeline {
-        font-size: 17px;
-      }
+    .twitter-timeline {
+      font-size: 15px;
     }
     .top_btn {
       padding: 0.1rem 1rem;
