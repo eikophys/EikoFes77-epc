@@ -62,3 +62,19 @@ main {
     z-index: -1;
   }
 }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size:medium;
+  th,
+  td {
+    border-bottom: 3px solid #29009b;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  th {
+    border: 3px solid #fefeff;
+    background-color: #29009b;
+    color: #fefeff;
+  }
+}

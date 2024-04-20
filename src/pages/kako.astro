@@ -37,24 +37,13 @@ import Layout from "../layouts/Layout.astro";
 (7)	決勝試合	(5), (6)の勝利チーム	2日目 14:00~16:00 -->
 <Layout title="部内科甲について">
   <div class="content">
-    <h1><span><Icon name="line-md:calendar" /></span>部内科甲について</h1>
+    <h1><span><Icon name="line-md:calendar" /></span>部内科甲</h1>
     <p>
       部内科学の甲子園では物理部の中で科学の甲子園を行います。科学の甲子園とは文字通り日本の高校生を対象とした科学の大会のことです。毎年全国都道府県ごとの予選大会を行い、優勝したチームが県代表として全国大会に進出します。全国大会では1日目の筆記試験の他に2日目に実技競技があります。その実技競技の中の工作実技を模したものを文化祭で部員たちが取り組みます。
     </p>
-    <h2>スケジュール</h2>
-    <table>
-      <tr>
-        <th>日時</th>
-        <th>内容</th>
-      </tr>
-      <tr>
-        <td>両日ともに</td>
-        <td>11:00 ~ 12:30<br />14:00 ~ 15:30</td>
-      </tr>
-    </table>
   </div>
   <div class="content">
-    <h2>チーム</h2>
+    <h2>スケジュール</h2>
     <table>
       <tr>
         <th>試合</th>
@@ -77,23 +66,23 @@ import Layout from "../layouts/Layout.astro";
         <td>1 日目 13:00~14:30</td>
       </tr>
       <tr>
-        <td>予選第 4 試合 (工学班特別試合)</td>
+        <td>予選第 4 試合<br />(工学班特別試合)</td>
         <td>13 14 15 16</td>
         <td>1日目 14:30~16:00</td>
       </tr>
       <tr>
         <td>準決勝第 1 試合</td>
-        <td>(3), (4)の勝利チーム</td>
+        <td>予選第 3, 4 試合<br />勝利チーム</td>
         <td>2日目 9:30~11:30</td>
       </tr>
       <tr>
         <td>準決勝第 2 試合</td>
-        <td>(1), (2)の勝利チーム</td>
+        <td>予選第 1, 2 試合<br />勝利チーム</td>
         <td>2日目 11:30~13:30</td>
       </tr>
       <tr>
         <td>決勝試合</td>
-        <td>(5), (6)の勝利チーム</td>
+        <td>準決勝第 1, 2 試合<br />勝利チーム</td>
         <td>2日目 14:00~16:00</td>
       </tr>
     </table>
@@ -117,21 +106,6 @@ import Layout from "../layouts/Layout.astro";
         margin: 0;
         width: 100%;
         text-align: center;
-      }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        th,
-        td {
-          border-bottom: 3px solid #29009b;
-          padding: 0.5rem;
-          text-align: center;
-        }
-        th {
-          border: 3px solid #fefeff;
-          background-color: #29009b;
-          color: #fefeff;
-        }
       }
     }
   </style>
