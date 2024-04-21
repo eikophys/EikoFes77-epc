@@ -65,7 +65,7 @@ main {
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size:medium;
+  font-size: medium;
   th,
   td {
     border-bottom: 3px solid #29009b;
@@ -93,6 +93,11 @@ table {
     }
   }
   h2 {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+  h3 {
     margin: 0;
     width: 100%;
     text-align: center;
