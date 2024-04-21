@@ -1,6 +1,8 @@
 ---
 import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import Map from "../assets/map/learning.svg";
 ---
 
 <Layout title="物理部とは">
@@ -13,6 +15,15 @@ import Layout from "../layouts/Layout.astro";
   </div>
   <div class="content">
     <h2>マップ</h2>
-    <p>ラーニングスペース場所</p>
+    <h3>2Fラーニングスペースにて発売！</h3>
+    <Image src={Map} alt="ラーニングスペース" class="map" width={500} />
   </div>
 </Layout>
+<style lang="scss">
+  .content {
+    margin: 2rem 0;
+  }
+  .map {
+    width: 100%;
+  }
+</style>
