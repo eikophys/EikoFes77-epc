@@ -7,32 +7,32 @@ import Map from "../assets/map/learning.svg";
 
 <Layout title="展示内容">
   <div class="content">
-    <h1><span><Icon name="line-md:beer-twotone" /></span>展示内容</h1>
+    <h1><span><Icon name="line-md:cog" /></span>展示内容</h1>
     <div class="exhibition">
-      <div class="exhibition__item">
+      <div class="item">
         <h2>物理実験室</h2>
         <p>FLL班の展示</p>
       </div>
-      <div class="exhibition__item">
+      <div class="item">
         <h2>第二予備教室</h2>
         <p>部内科学の甲子園</p>
       </div>
-      <div class="exhibition__item">
+      <div class="item">
         <h2>物理教室</h2>
         <p>PC班展示(ゲーム, 3D)、　工学班展示</p>
       </div>
-      <div class="exhibition__item">
+      <div class="item">
         <h2>第四予備教室</h2>
         <p>プラネタリウム</p>
       </div>
 
-      <div class="exhibition__item">
+      <div class="item">
         <h2>生物教室</h2>
         <p>
           数学班の部屋（自作問題の配布、採点など）、プラネタリウム整理券配布
         </p>
       </div>
-      <div class="exhibition__item">
+      <div class="item">
         <h2>ラーニングスペース</h2>
         <p>ATTO(部誌)の販売</p>
       </div>
@@ -40,17 +40,19 @@ import Map from "../assets/map/learning.svg";
   </div>
 </Layout>
 <style lang="scss">
+  .content {
+    filter: none;
+  }
   .exhibition {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
-  }
-
-  .exhibition__item {
-    border: 3px solid #29009b;
-    background-color: #fefeff1e;
-    padding: 20px;
-    border-radius: 10px;
+    .item {
+      border: 3px solid #29009b;
+      background-color: #fefeff50;
+      padding: 20px;
+      border-radius: 5px;
+    }
   }
 
   .map {
