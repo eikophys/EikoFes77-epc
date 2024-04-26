@@ -2,61 +2,122 @@
 import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import Map from "../assets/map/learning.svg";
+import stF from "../assets/map/1F.svg";
+import ndF from "../assets/map/2F.svg";
+const room = [
+  {
+    name: "物理実験室",
+    x: 100,
+    y: 100,
+    description: "FLL班の展示",
+  },
+  {
+    name: "第二予備教室",
+    x: 200,
+    y: 200,
+    description: "部内科学の甲子園",
+  },
+  {
+    name: "物理教室",
+    x: 300,
+    y: 300,
+    description: "PC班展示(ゲーム, 3D)、　工学班展示",
+  },
+  {
+    name: "第四予備教室",
+    x: 400,
+    y: 400,
+    description: "プラネタリウム",
+  },
+  {
+    name: "生物教室",
+    x: 500,
+    y: 500,
+    description:
+      "数学班の部屋（自作問題の配布、採点など）、プラネタリウム整理券配布",
+  },
+  {
+    name: "ラーニングスペース",
+    x: 600,
+    y: 600,
+    description: "ATTO(部誌)の販売",
+  },
+];
 ---
 
 <Layout title="展示内容">
   <div class="content">
-    <h1><span><Icon name="line-md:cog" /></span>展示内容</h1>
-    <div class="exhibition">
-      <div class="item">
-        <h2>物理実験室</h2>
-        <p>FLL班の展示</p>
-      </div>
-      <div class="item">
-        <h2>第二予備教室</h2>
-        <p>部内科学の甲子園</p>
-      </div>
-      <div class="item">
-        <h2>物理教室</h2>
-        <p>PC班展示(ゲーム, 3D)、　工学班展示</p>
-      </div>
-      <div class="item">
-        <h2>第四予備教室</h2>
-        <p>プラネタリウム</p>
-      </div>
-
-      <div class="item">
-        <h2>生物教室</h2>
-        <p>
-          数学班の部屋（自作問題の配布、採点など）、プラネタリウム整理券配布
-        </p>
-      </div>
-      <div class="item">
-        <h2>ラーニングスペース</h2>
-        <p>ATTO(部誌)の販売</p>
+    <h3>1F</h3>
+    <img src={stF.src} alt="栄光学園1階マップ" />
+    <h3>2F</h3>
+    <img src={ndF.src} alt="栄光学園2階マップ" />
+    <div id="mapBox"></div>
+    <div class="content">
+      <h1><span><Icon name="line-md:cog" /></span>展示内容</h1>
+      <div class="display">
+        {
+          room.map((r) => (
+            <div
+              class="item"
+              onmouseover={`showBox(${r.x}, ${r.y})`}
+              onmouseout="hideBox()"
+            >
+              <h2>{r.name}</h2>
+              <p>{r.description}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
   </div>
-</Layout>
-<style lang="scss">
-  .content {
-    filter: none;
-  }
-  .exhibition {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-    gap: 20px;
-    .item {
-      border: 3px solid #29009b;
-      background-color: #fefeff50;
-      padding: 20px;
-      border-radius: 5px;
-    }
-  }
+  <script>
+    window.showBox = function (x, y) {
+      console.log("show");
+      const box = document.getElementById("mapBox");
+      box.style.left = `${x}px`;
+      box.style.top = `${y}px`;
+      box.style.display = "block";
+    };
 
-  .map {
-    margin-top: 20px;
-    text-align: center;
-  }
-</style>
+    window.hideBox = function () {
+      const box = document.getElementById("mapBox");
+      box.style.display = "none";
+    };
+  </script>
+  <style lang="scss">
+    .content:last-child {
+      filter: none;
+    }
+    .display {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 20px;
+      .item {
+        h2 {
+          text-align: left;
+        }
+        border: 3px solid #29009b;
+        background-color: #fefeff50;
+        padding: 10px;
+        border-radius: 5px;
+        transition:
+          filter 0.5s ease,
+          transform 0.5s ease;
+        &:hover {
+          filter: drop-shadow(0 0 50px #29009b85);
+          transform: scale(1.02);
+        }
+      }
+    }
+    img {
+      width: 100%;
+    }
+    #mapBox {
+      position: absolute;
+      display: none;
+      width: 100px;
+      height: 100px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</Layout>
