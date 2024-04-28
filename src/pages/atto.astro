@@ -2,7 +2,7 @@
 import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import Map from "../assets/map/learning.svg";
+import ATTO from "../assets/ATTO.png";
 ---
 
 <Layout title="物理部とは">
@@ -14,9 +14,9 @@ import Map from "../assets/map/learning.svg";
     </p>
   </div>
   <div class="content">
-    <h2>マップ</h2>
+    <h2>表紙</h2>
+    <Image src={ATTO} alt="ラーニングスペース" class="map" width={300} />
     <h3>2Fラーニングスペースにて発売！</h3>
-    <Image src={Map} alt="ラーニングスペース" class="map" width={500} />
   </div>
 </Layout>
 <style lang="scss">
@@ -24,6 +24,7 @@ import Map from "../assets/map/learning.svg";
     margin: 2rem 0;
   }
   .map {
-    width: 100%;
+    display: block;
+    margin-inline: auto;
   }
 </style>
