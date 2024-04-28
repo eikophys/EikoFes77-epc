@@ -12,6 +12,7 @@ import Layout from "../layouts/Layout.astro";
     </p>
     <a href="/display/" class="top_btn">展示内容を見る</a>
   </div>
+
   <div class="content">
     <a
       class="twitter-timeline"
@@ -29,6 +30,7 @@ import Layout from "../layouts/Layout.astro";
   .content {
     &:last-child {
       filter: none;
+      max-width: calc(100svw - 62px);
     }
     .top_btn {
       padding: 0.1rem 1rem;
@@ -59,11 +61,5 @@ import Layout from "../layouts/Layout.astro";
   .twitter-timeline > iframe {
     width: 100% !important;
     opacity: 0.8;
-  }
-  @media (max-width: 700px) {
-    .twitter-timeline > iframe {
-      width: 100% !important;
-      height: 500px !important;
-    }
   }
 </style>
