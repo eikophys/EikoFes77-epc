@@ -55,6 +55,18 @@ const path = Astro.url.pathname;
     </menu>
   </nav>
 </header>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const checkbox = document.getElementById("hamburger") as HTMLInputElement;
+    if (checkbox) {
+      checkbox.addEventListener("change", () => {
+        if (checkbox.checked) {
+          window.scrollTo(0, 0);
+        }
+      });
+    }
+  });
+</script>
 <style lang="scss">
   header {
     position: relative;
