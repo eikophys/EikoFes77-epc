@@ -9,9 +9,9 @@ const room = [
     description: "FLL班の展示",
     floor: 1,
     x: 3,
-    y: 20,
+    y: 21,
     width: 10.5,
-    height: 17,
+    height: 16,
   },
   {
     name: "第二予備教室",
@@ -46,9 +46,9 @@ const room = [
       "数学班の部屋（自作問題の配布、採点など）、プラネタリウム整理券配布",
     floor: 1,
     x: 41,
-    y: 20,
+    y: 21,
     width: 7,
-    height: 17,
+    height: 16,
   },
   {
     name: "ラーニングスペース",
@@ -83,7 +83,7 @@ const room = [
         room.map((r, index) => {
           const id = `radio-${index}`;
           return (
-            <div class="item">
+            <label for={id} class="item">
               <input
                 type="radio"
                 id={id}
@@ -91,11 +91,11 @@ const room = [
                 hidden
                 onchange={`boxState('${id}', ${r.floor}, ${r.x}, ${r.y}, ${r.width}, ${r.height})`}
               />
-              <label for={id}>
+              <div>
                 <h2>{r.name}</h2>
                 <p>{r.description}</p>
-              </label>
-            </div>
+              </div>
+            </label>
           );
         })
       }
