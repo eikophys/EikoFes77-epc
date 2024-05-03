@@ -21,14 +21,10 @@ const room = [
     y: 1,
     width: 6,
     height: 16,
-    link: {
-      title: "部内科甲の詳細へ",
-      url: "/kako/",
-    },
   },
   {
     name: "物理教室",
-    description: "PC班展示(ゲーム, 3D)、　工学班展示、ATTO(部誌)の販売",
+    description: "PC班展示(ゲーム, 3D)、　工学班展示",
     floor: 1,
     x: 31,
     y: 1,
@@ -54,30 +50,94 @@ const room = [
     width: 7,
     height: 16,
   },
+  {
+    name: "ラーニングスペース",
+    description: "ATTO(部誌)の販売",
+    floor: 2,
+    x: 55,
+    y: 10,
+    width: 9.5,
+    height: 25,
+  },
 ];
 ---
 
 <Layout title="展示内容">
   <div class="content">
     <h1><span><Icon name="line-md:cog" /></span>展示内容</h1>
+    <h3>1F</h3>
+    <div class="map-container">
+      <img src={stF.src} alt="栄光学園1階マップ" class="1F" />
+      <div id="mapBox1"></div>
+    </div>
+    <h3>2F</h3>
+    <div class="map-container">
+      <img src={ndF.src} alt="栄光学園2階マップ" class="2F" />
+      <div id="mapBox2"></div>
+    </div>
+  </div>
+  <div class="content">
+    <p>展示場所を選択するとマップ上に表示されます</p>
     <div class="display">
       {
-        room.map((r) => {
+        room.map((r, index) => {
+          const id = `radio-${index}`;
           return (
-            <div class="item">
-              <h2>{r.name}</h2>
-              <p>{r.description}</p>
-              {r.link && <a href={r.link.url}>{r.link.title}</a>}
-            </div>
+            <label for={id} class="item">
+              <input
+                type="radio"
+                id={id}
+                name="room"
+                hidden
+                onchange={`boxState('${id}', ${r.floor}, ${r.x}, ${r.y}, ${r.width}, ${r.height})`}
+              />
+              <div>
+                <h2>{r.name}</h2>
+                <p>{r.description}</p>
+              </div>
+            </label>
           );
         })
       }
     </div>
   </div>
-  <style lang="scss">
-    .content {
-      filter: none;
+  <script>
+    declare global {
+      interface Window {
+        boxState: (
+          id: string,
+          floor: number,
+          x: number,
+          y: number,
+          width: number,
+          height: number
+        ) => void;
+      }
     }
+    window.boxState = (id, floor, x, y, width, height) => {
+      console.log(id, x, y, floor);
+      const box = document.getElementById(floor === 1 ? "mapBox1" : "mapBox2");
+      const radio = document.getElementById(id) as HTMLInputElement;
+      if (radio && radio.checked) {
+        if (box) {
+          box.style.left = `${x}%`;
+          box.style.top = `${y}%`;
+          box.style.display = "block";
+          box.style.width = `${width}%`;
+          box.style.height = `${height}%`;
+        }
+        const otherBox = document.getElementById(
+          floor === 1 ? "mapBox2" : "mapBox1"
+        );
+        if (otherBox) {
+          otherBox.style.display = "none";
+        }
+      } else if (box) {
+        box.style.display = "none";
+      }
+    };
+  </script>
+  <style lang="scss">
     .display {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
@@ -87,17 +147,49 @@ const room = [
           text-align: left;
         }
         border: 3px solid #29009b;
-        background-color: #fefeff70;
+        background-color: #fefeff50;
         padding: 10px;
         border-radius: 5px;
         transition:
           filter 0.5s ease,
           transform 0.5s ease;
         &:hover {
-          filter: drop-shadow(0 0 50px #29009b40);
+          filter: drop-shadow(0 0 50px #29009b85);
           transform: scale(0.98);
         }
+        &:active {
+          filter: drop-shadow(0 0 50px #29009ba6);
+          transform: scale(0.95);
+        }
+
+        &:has(input:checked) {
+          filter: drop-shadow(0 0 50px #29009ba6);
+          transform: scale(1.02);
+        }
       }
+    }
+    .map-container {
+      position: relative;
+    }
+    img {
+      width: 100%;
+    }
+    @keyframes sway {
+      0%,
+      100% {
+        box-shadow: 0 0 40px #29009b;
+      }
+      50% {
+        box-shadow: 0 0 60px #29009b;
+      }
+    }
+
+    #mapBox1,
+    #mapBox2 {
+      position: absolute;
+      display: none;
+      background-color: #29009b;
+      animation: sway 2s infinite ease-in-out;
     }
   </style>
 </Layout>
