@@ -7,5 +7,5 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [compress(), critters(), relativeLinks(), icon()]
+  integrations: [compress(), critters(), icon()]
 });

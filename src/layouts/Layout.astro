@@ -1,6 +1,7 @@
 ---
 import "../styles/global.scss";
 import Header from "../components/Header.astro";
+import { ViewTransitions } from 'astro:transitions';
 interface Props {
   title: string;
 }
@@ -25,6 +26,7 @@ const title =
     <meta name="theme-color" content="#29009b" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ViewTransitions />
   </head>
   <body>
     <Header />
