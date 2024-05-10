@@ -3,7 +3,7 @@ import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
 import stF from "../assets/map/1F.svg";
 import ndF from "../assets/map/2F.svg";
-const rooms = [
+const room = [
   {
     name: "物理実験室",
     description: "FLL班の展示",
@@ -76,7 +76,7 @@ const rooms = [
       <p>展示場所を選択するとマップ上に表示されます</p>
       <div class="display">
         {
-          rooms.map((r, index) => {
+          room.map((r, index) => {
             const id = `radio-${index}`;
             return (
               <label for={id} class="item">
@@ -90,7 +90,6 @@ const rooms = [
                 <div>
                   <h2>{r.name}</h2>
                   <p>{r.description}</p>
-                  <p>{r.link && <a href={r.link.url}>{r.link.title}</a>}</p>
                 </div>
               </label>
             );
@@ -100,7 +99,7 @@ const rooms = [
     </div>
   </div>
 </Layout>
-<!-- <script>
+<script>
   declare global {
     interface Window {
       boxState: (
@@ -135,43 +134,8 @@ const rooms = [
       box.style.display = "none";
     }
   };
-</script> -->
+</script>
 <style lang="scss">
-  $rooms: (
-      floor: 1,
-      x: 3%,
-      y: 21%,
-      width: 10.5%,
-      height: 16%,
-    ),
-    (
-      floor: 1,
-      x: 43%,
-      y: 1%,
-      width: 6%,
-      height: 16%,
-    ),
-    (
-      floor: 1,
-      x: 31.5%,
-      y: 1%,
-      width: 8%,
-      height: 15%,
-    ),
-    (
-      floor: 2,
-      x: 17.5%,
-      y: 1%,
-      width: 4%,
-      height: 15%,
-    ),
-    (
-      floor: 1,
-      x: 41%,
-      y: 21%,
-      width: 7%,
-      height: 16%,
-    );
   .display {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
@@ -224,17 +188,5 @@ const rooms = [
     display: none;
     background-color: #29009b;
     animation: sway 2s infinite ease-in-out;
-  }
-  @each $room in $rooms {
-    $num: index($rooms, $room);
-    .container:has(.radio-#{$num}[type="radio"]:checked) {
-      #mapBox#{map-get($room, "floor")} {
-        display: block;
-        left: map-get($room, "x");
-        top: map-get($room, "y");
-        width: map-get($room, "width");
-        height: map-get($room, "height");
-      }
-    }
   }
 </style>
