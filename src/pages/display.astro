@@ -3,7 +3,7 @@ import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
 import stF from "../assets/map/1F.svg";
 import ndF from "../assets/map/2F.svg";
-const room = [
+const rooms = [
   {
     name: "物理実験室",
     description: "FLL班の展示",
@@ -76,7 +76,7 @@ const room = [
       <p>展示場所を選択するとマップ上に表示されます</p>
       <div class="display">
         {
-          room.map((r, index) => {
+          rooms.map((r, index) => {
             const id = `radio-${index}`;
             return (
               <label for={id} class="item">
@@ -90,6 +90,7 @@ const room = [
                 <div>
                   <h2>{r.name}</h2>
                   <p>{r.description}</p>
+                  <p>{r.link && <a href={r.link.url}>{r.link.title}</a>}</p>
                 </div>
               </label>
             );
